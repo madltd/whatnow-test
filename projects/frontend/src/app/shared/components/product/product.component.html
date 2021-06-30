@@ -1,0 +1,14 @@
+<div class="tw-w-full tw-flex" [ngClass]="horizontal ? 'tw-flex-row' : 'tw-flex-col'">
+    <div class="tw-relative" [ngClass]="horizontal ? 'tw-w-24 tw-mr-5' : 'tw-w-full hover__parent'">
+        <img
+            src="https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/438788/item/goods_03_438788.jpg"
+            class="tw-w-full"
+        />
+        <div class="tw-absolute tw-inset-0 tw-flex tw-justify-center tw-items-end tw-p-3 hover__child">
+        </div>
+    </div>
+    <div class="tw-w-full tw-flex tw-items-start" [ngClass]="horizontal ? 'tw-flex-col' : 'tw-flex-row tw-pt-3'">
+        <p class="tw-flex-1 tw-text-xs tw-font-medium" [ngClass]="horizontal ? 'tw-mb-2' : 'tw-mr-5'">Men 100% Extra Fine Merino Knit Long Sleeved Polo Shirt</p>
+        <p class="tw-text-xs tw-font-medium">£34.90</p>
+    </div>
+</div>

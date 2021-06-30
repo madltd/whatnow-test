@@ -31,6 +31,7 @@
               "projects/frontend/src/assets"
             ],
             "styles": [
+              "styles/tailwind.css",
               "projects/frontend/src/styles.scss"
             ],
             "scripts": []
