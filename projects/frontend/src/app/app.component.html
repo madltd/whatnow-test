@@ -10,16 +10,26 @@
                 <a href="#" class="tw-text-lg tw-font-bold tw-text-gray-700 tw-no-underline">Blog</a>
                 <a href="#" class="tw-text-lg tw-font-bold tw-text-gray-700 tw-no-underline">Contact</a>
             </div>
-            <div class="tw-flex-1 tw-flex tw-justify-end tw-items-center">
-                <p class="tw-mr-4 tw-font-semibold tw-text-gray-700 tw-no-underline">£239.99</p>
+            <div class="tw-flex-1 tw-flex tw-justify-end tw-items-center tw-space-x-4" *ngIf="(isAuthenticated$ | async); else loginEl">
+                <p class="tw-font-semibold tw-text-gray-700 tw-no-underline">{{ cartTotal | currency:'GBP' }}</p>
                 <button class="tw-h-10 tw-w-10 tw-flex tw-items-center tw-justify-center tw-border-white tw-border-2 tw-rounded-full" (click)="toggle()">
                     <nb-icon icon="shopping-cart-outline"></nb-icon>
                 </button>
+                <button class="tw-h-10 tw-w-10 tw-flex tw-items-center tw-justify-center tw-border-white tw-border-2 tw-rounded-full" (click)="logout()">
+                    <nb-icon icon="log-out-outline"></nb-icon>
+                </button>
             </div>
+            <ng-template #loginEl>
+                <div class="tw-flex-1 tw-flex tw-justify-end tw-items-center tw-space-x-4">
+                    <button class="tw-h-10 tw-w-10 tw-flex tw-items-center tw-justify-center tw-border-white tw-border-2 tw-rounded-full" (click)="login()">
+                        <nb-icon icon="log-in-outline"></nb-icon>
+                    </button>
+                </div>
+            </ng-template>
         </div>
     </nb-layout-header>
     
-    <nb-sidebar fixed right class="tw-shadow-xl tw-bg-white tw-rounded-tl-2xl">
+    <nb-sidebar fixed right class="tw-shadow-xl tw-bg-white tw-rounded-tl-2xl" state="collapsed">
         <p class="tw-text-xl tw-font-medium tw-mb-5">Your Cart</p>
     </nb-sidebar>
 

@@ -6,7 +6,7 @@
             <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300">
                 <nb-icon icon="expand-outline"></nb-icon>
             </button>
-            <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300">
+            <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300" *ngIf="(isAuthenticated$ | async)">
                 <nb-icon icon="shopping-bag-outline"></nb-icon>
             </button>
         </div>

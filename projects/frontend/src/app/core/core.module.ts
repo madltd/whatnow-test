@@ -3,6 +3,8 @@ import { NbThemeModule, NbSidebarModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NbAuthModule } from '@nebular/auth';
+import { NbFirebaseAuthModule, NbFirebaseGoogleStrategy } from '@nebular/firebase-auth';
 
 import { throwIfAlreadyLoaded } from './module-import.guard';
 
@@ -20,6 +22,13 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
             storageBucket: 'whatnowtest-76f6a.appspot.com',
             messagingSenderId: '888085725665',
             appId: '1:888085725665:web:d8b95db927aeab3ae592a0'
+        }),
+        NbFirebaseAuthModule,
+        NbAuthModule.forRoot({
+            strategies: [
+                NbFirebaseGoogleStrategy.setup({ name: 'google' })
+            ],
+            forms: { }
         }),
         AngularFirestoreModule
     ]
