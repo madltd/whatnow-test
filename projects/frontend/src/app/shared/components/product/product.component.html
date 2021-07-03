@@ -1,14 +1,22 @@
-<div class="tw-w-full tw-flex" [ngClass]="horizontal ? 'tw-flex-row' : 'tw-flex-col'">
-    <div class="tw-relative" [ngClass]="horizontal ? 'tw-w-24 tw-mr-5' : 'tw-w-full hover__parent'">
-        <img
-            src="https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/438788/item/goods_03_438788.jpg"
-            class="tw-w-full"
-        />
-        <div class="tw-absolute tw-inset-0 tw-flex tw-justify-center tw-items-end tw-p-3 hover__child">
+<div class="tw-w-full tw-bg-white tw-relative tw-p-5 tw-rounded-3xl product-shadow tw-overflow-hidden">
+    <div class="tw-absolute tw-inset-0 product-dots-bg"></div>
+    <div class="tw-absolute tw-inset-0 product-bg"></div>
+    <div class="tw-w-full tw-h-full tw-flex tw-flex-col tw-items-center tw-relative">
+        <div class="tw-flex tw-items-center tw-justify-between tw-w-full">
+            <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300">
+                <nb-icon icon="expand-outline"></nb-icon>
+            </button>
+            <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300">
+                <nb-icon icon="shopping-bag-outline"></nb-icon>
+            </button>
         </div>
-    </div>
-    <div class="tw-w-full tw-flex tw-items-start" [ngClass]="horizontal ? 'tw-flex-col' : 'tw-flex-row tw-pt-3'">
-        <p class="tw-flex-1 tw-text-xs tw-font-medium" [ngClass]="horizontal ? 'tw-mb-2' : 'tw-mr-5'">Men 100% Extra Fine Merino Knit Long Sleeved Polo Shirt</p>
-        <p class="tw-text-xs tw-font-medium">£34.90</p>
+        <div class="tw-px-8">
+            <div class="tw-absolute tw-bg-orange-600 tw-overflow-hidden tw-top-12 tw-rounded-3xl tw-left-6 tw-right-6 tw-flex tw-justify-center tw-h-24">
+                <div class="tw-rounded-full tw-h-32 tw-w-32 tw--mt-2 tw-border-2 tw-border-white tw-bg-yellow-400"></div>
+            </div>
+            <img src="./assets/product.png" class="tw-w-full tw-mb-5 tw-mt-6 tw-relative" />
+            <p class="tw-text-center tw-text-purple-700 tw-font-semibold tw-text-sm tw-relative">Popular Shoe Trends</p>
+            <p class="tw-text-center tw-text-gray-400 tw-mt-2 tw-font-light tw-text-sm tw-relative">£239.99</p>
+        </div>
     </div>
 </div>

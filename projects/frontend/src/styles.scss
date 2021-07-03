@@ -6,6 +6,10 @@
     @include nb-theme-global();
 }
 
+html, body {
+    height: 100vh;
+}
+
 .hover {
     &__child {
         visibility: hidden;
@@ -14,4 +18,24 @@
     &__parent:hover > &__child {
         visibility: visible;
     }
+}
+
+.max-content-width {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-bg {
+    background: url('./assets/header.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.side {
+    height: 100vh;
+    margin-top: -7rem;
+}
+
+.vertical-text {
+    transform: rotate(-90deg);
 }

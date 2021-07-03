@@ -1,0 +1,12 @@
+.product-bg {
+    background: radial-gradient(ellipse, rgba(255, 146, 71, 0.6) 0%, rgba(255, 146, 71, 0) 80%);
+}
+
+.product-dots-bg {
+    background: linear-gradient(90deg, white 14px, transparent 1%) center, linear-gradient(white 14px, transparent 1%) center, #dfd8c6;
+    background-size: 15px 15px;
+}
+
+.product-shadow {
+    box-shadow: 0px 20px 50px 0px rgba(254,148,70,0.3);
+}
