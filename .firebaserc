@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "whatnowtest-76f6a": {
+      "hosting": {
+        "frontend": [
+          "whatnowtest-76f6a"
+        ]
+      }
+    }
+  }
+}

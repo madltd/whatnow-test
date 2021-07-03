@@ -11,12 +11,12 @@
             </button>
         </div>
         <div class="tw-px-8">
-            <div class="tw-absolute tw-bg-orange-600 tw-overflow-hidden tw-top-12 tw-rounded-3xl tw-left-6 tw-right-6 tw-flex tw-justify-center tw-h-24">
+            <div class="tw-absolute tw-overflow-hidden tw-top-12 tw-rounded-3xl tw-left-6 tw-right-6 tw-flex tw-justify-center tw-h-24" [ngClass]="color">
                 <div class="tw-rounded-full tw-h-32 tw-w-32 tw--mt-2 tw-border-2 tw-border-white tw-bg-yellow-400"></div>
             </div>
             <img src="./assets/product.png" class="tw-w-full tw-mb-5 tw-mt-6 tw-relative" />
-            <p class="tw-text-center tw-text-purple-700 tw-font-semibold tw-text-sm tw-relative">Popular Shoe Trends</p>
-            <p class="tw-text-center tw-text-gray-400 tw-mt-2 tw-font-light tw-text-sm tw-relative">£239.99</p>
+            <p class="tw-text-center tw-text-purple-700 tw-font-semibold tw-text-sm tw-relative">{{ product.name }}</p>
+            <p class="tw-text-center tw-text-gray-400 tw-mt-2 tw-font-light tw-text-sm tw-relative">{{ product.price | currency:'GBP' }}</p>
         </div>
     </div>
 </div>
