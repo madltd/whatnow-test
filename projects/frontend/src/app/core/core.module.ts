@@ -6,8 +6,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NbAuthModule } from '@nebular/auth';
 import { NbFirebaseAuthModule, NbFirebaseGoogleStrategy } from '@nebular/firebase-auth';
 
-import { throwIfAlreadyLoaded } from './module-import.guard';
+import { CartService } from 'src/services/cart.service';
 
+import { throwIfAlreadyLoaded } from './module-import.guard';
 
 @NgModule({
     declarations: [],
@@ -31,6 +32,9 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
             forms: { }
         }),
         AngularFirestoreModule
+    ],
+    providers: [
+        CartService
     ]
 })
 export class CoreModule {

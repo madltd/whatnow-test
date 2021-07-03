@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { NbAuthService } from '@nebular/auth';
 import { NbSidebarService } from '@nebular/theme';
 import { Observable } from 'rxjs';
-import { first, tap } from 'rxjs/operators';
+import { first, map, tap } from 'rxjs/operators';
+
+import { Cart } from 'src/models/Cart';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
     selector: 'app-root',
@@ -12,19 +16,34 @@ import { first, tap } from 'rxjs/operators';
 export class AppComponent implements OnInit {
     public sideBarState = 'expanded';
     public isAuthenticated$: Observable<boolean>;
-    public cartTotal = 0;
 
     constructor(
         private sidebarService: NbSidebarService,
-        private authService: NbAuthService
+        private authService: NbAuthService,
+        private auth: AngularFireAuth,
+        private cartService: CartService
     ) { }
 
     ngOnInit() {
-        this.isAuthenticated$ = this.authService.onAuthenticationChange().pipe(
-            tap(isAuthenticated => {
-                if (!isAuthenticated) this.sidebarService.collapse();
-            })
+        this.isAuthenticated$ = this.auth.authState.pipe(
+            tap(user => {
+                if (!user) {
+                    this.sidebarService.collapse();
+                    this.cartService.destroy();
+                } else {
+                    this.cartService.init(user.uid);
+                }
+            }),
+            map(user => !!user)
         );
+    }
+
+    public get cart() {
+        return this.cartService.cart;
+    }
+
+    public get cartTotal() {
+        return this.cartService.total;
     }
 
     public toggle(): void {

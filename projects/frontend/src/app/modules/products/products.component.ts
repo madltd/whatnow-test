@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.products$ = this.firestore.collection<Product>('products').valueChanges();
+        this.products$ = this.firestore.collection<Product>('products').valueChanges({ idField: 'uid' });
     }
 
 }

@@ -31,6 +31,11 @@
     
     <nb-sidebar fixed right class="tw-shadow-xl tw-bg-white tw-rounded-tl-2xl" state="collapsed">
         <p class="tw-text-xl tw-font-medium tw-mb-5">Your Cart</p>
+        <p class="tw-text-center tw-text-sm tw-text-gray-500" *ngIf="!cart.length">Your cart is empty</p>
+        <div class="tw-w-full tw-flex tw-flex-col tw-space-y-4" *ngIf="cart.length">
+            <app-product *ngFor="let item of cart" [product]="item"></app-product>
+            <p class="tw-text-gray-700 tw-text-semibold tw-text-right">Total: {{ cartTotal | currency:'GBP' }}</p>
+        </div>
     </nb-sidebar>
 
     <nb-layout-column>

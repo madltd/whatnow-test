@@ -1,4 +1,4 @@
-<div class="tw-w-full tw-bg-white tw-relative tw-p-5 tw-rounded-3xl product-shadow tw-overflow-hidden">
+<div class="tw-w-full tw-bg-white tw-relative tw-p-5 tw-rounded-3xl product-shadow tw-overflow-hidden" *ngIf="!product.qty">
     <div class="tw-absolute tw-inset-0 product-dots-bg"></div>
     <div class="tw-absolute tw-inset-0 product-bg"></div>
     <div class="tw-w-full tw-h-full tw-flex tw-flex-col tw-items-center tw-relative">
@@ -6,7 +6,7 @@
             <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300">
                 <nb-icon icon="expand-outline"></nb-icon>
             </button>
-            <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300" *ngIf="(isAuthenticated$ | async)">
+            <button class="tw-h-8 tw-w-8 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-border tw-border-gray-300" *ngIf="(isAuthenticated$ | async)" (click)="change()">
                 <nb-icon icon="shopping-bag-outline"></nb-icon>
             </button>
         </div>
@@ -17,6 +17,25 @@
             <img src="./assets/product.png" class="tw-w-full tw-mb-5 tw-mt-6 tw-relative" />
             <p class="tw-text-center tw-text-purple-700 tw-font-semibold tw-text-sm tw-relative">{{ product.name }}</p>
             <p class="tw-text-center tw-text-gray-400 tw-mt-2 tw-font-light tw-text-sm tw-relative">{{ product.price | currency:'GBP' }}</p>
+        </div>
+    </div>
+</div>
+<div class="tw-w-full tw-pb-4 tw-border-b tw-flex tw-items-center" *ngIf="product.qty">
+    <img src="./assets/product.png" class="tw-w-16 tw-mr-4" />
+    <div class="tw-flex tw-flex-col tw-justify-between">
+        <p class="tw-text-purple-700 tw-text-sm tw-mb-4">{{ product.name }}</p>
+        <div class="tw-w-full tw-flex tw-flex-col tw-items-start">
+            <p class="tw-text-sm tw-text-gray-400 tw-mb-2">Price: {{ product.price | currency:'GBP' }}</p>
+            <div class="tw-rounded-full tw-flex tw-items-center tw-border">
+                <button type="button" class="tw-py-1 tw-px-2" (click)="change(-1)">
+                    <nb-icon icon="minus" class="tw-text-sm"></nb-icon>
+                </button>
+                <p class="tw-px-2 tw-text-sm">{{ product.qty }}</p>
+                <button type="button" class="tw-py-1 tw-px-2" (click)="change(1)">
+                    <nb-icon icon="plus" class="tw-text-sm"></nb-icon>
+                </button>
+            </div>
+            <!-- <p class="tw-text-sm tw-text-gray-400">Qty: {{ product.qty }}</p> -->
         </div>
     </div>
 </div>
