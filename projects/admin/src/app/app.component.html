@@ -33,18 +33,18 @@
                             </button>
                         </div>
                     </div>
-                    <div class="tw-w-full tw-flex tw-items-center tw-space-x-4" *ngFor="let item of cart.items; last as isLast" [class.mb-2]="!isLast">
+                    <div class="tw-w-full tw-flex tw-items-center tw-space-x-4" *ngFor="let item of cart.items; last as isLast" [class.tw-mb-2]="!isLast">
                         <p class="tw-flex-1">{{ item.name }}</p>
-                        <div class="tw-rounded-full tw-flex tw-items-center tw-border">
+                        <div class="tw-rounded-full tw-flex tw-items-center tw-border tw-w-24">
                             <button type="button" class="tw-py-1 tw-px-2" (click)="change(cart, item, -1)">
                                 <nb-icon icon="minus" class="tw-text-sm"></nb-icon>
                             </button>
-                            <p class="tw-px-2 tw-text-sm">{{ item.qty }}</p>
+                            <p class="tw-px-2 tw-text-sm tw-flex-1 tw-text-center">{{ item.qty }}</p>
                             <button type="button" class="tw-py-1 tw-px-2" (click)="change(cart, item, 1)">
                                 <nb-icon icon="plus" class="tw-text-sm"></nb-icon>
                             </button>
                         </div>
-                        <p class="tw-text-sm tw-text-gray-400">{{ item.price | currency:'GBP' }}</p>
+                        <p class="tw-text-sm tw-text-gray-400 tw-w-20 tw-text-right">{{ item.price | currency:'GBP' }}</p>
                     </div>
                 </div>
             </div>

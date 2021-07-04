@@ -20,5 +20,10 @@ module.exports = {
     '.js'
   ],
   extractors: [],
-  content: []
+  content: [
+    './projects/frontend/**/*.html',
+    './projects/frontend/**/*.ts',
+    './projects/admin/**/*.html',
+    './projects/admin/**/*.ts',
+  ]
 }

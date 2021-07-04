@@ -4,8 +4,14 @@
       "hosting": {
         "frontend": [
           "whatnowtest-76f6a"
+        ],
+        "admin": [
+          "admin-whatnowtest-76f6a"
         ]
       }
     }
+  },
+  "projects": {
+    "whatnowtest": "whatnowtest-76f6a"
   }
 }
