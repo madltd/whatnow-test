@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
         this.isAuthenticated$ = this.authService.onAuthenticationChange();
     }
 
-    public change(qty = 1): void {
+    public change(product, qty = 1): void {
         this.cartService.changeCart(this.product, qty);
     }
 }

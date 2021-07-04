@@ -156,6 +156,7 @@
               "projects/admin/src/assets"
             ],
             "styles": [
+              "styles/tailwind.css",
               "projects/admin/src/styles.scss"
             ],
             "scripts": []

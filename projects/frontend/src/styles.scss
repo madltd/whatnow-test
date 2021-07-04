@@ -6,20 +6,6 @@
     @include nb-theme-global();
 }
 
-html, body {
-    height: 100vh;
-}
-
-.hover {
-    &__child {
-        visibility: hidden;
-    }
-
-    &__parent:hover > &__child {
-        visibility: visible;
-    }
-}
-
 .max-content-width {
     max-width: 1200px;
     margin: 0 auto;
